@@ -1,0 +1,7 @@
+#Name : Karim Hanna Student ID: 1969165
+collector = map(int, input().split())
+my_list = [i for i in collector if i >= 0]
+my_list.sort()
+lenght = len(my_list)
+for i in range(lenght):
+    print(my_list[i],end=' ')
