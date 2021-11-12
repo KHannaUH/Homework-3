@@ -1,0 +1,63 @@
+#Name:karim hanna STUDID:1969165
+team_roster = {}
+
+while len(team_roster) < 5:
+    print('Enter player ', len(team_roster) + 1, "'s jersey number:", sep='')
+    jersey = int(input())
+    print('Enter player ', len(team_roster) + 1, "'s rating:", sep='')
+    rating = int(input())
+    print()
+    team_roster[jersey] = rating
+
+sorted_team_roster = []
+for i in team_roster.keys():
+    sorted_team_roster.append(i)
+
+sorted_team_roster.sort()
+print('ROSTER')
+for i in sorted_team_roster:
+    print('Jersey number: ', i, ', Rating: ', team_roster[i], sep='')
+
+while True:
+    print(
+        '\nMENU\na - Add player\nd - Remove player\nu - Update player rating\nr - Output players above a rating\no - Output roster\nq - Quit\n\nChoose an option:')
+    option = input()
+
+    if option == 'a':
+        print("Enter a new player's jersey number:")
+        jersey = int(input())
+        print("Enter the player's rating:")
+        rating = int(input())
+        team_roster[jersey] = rating
+    if option == 'd':
+        print('Enter a jersey number:')
+        jersey = int(input())
+        del team_roster[jersey]
+    if option == 'u':
+        print('Enter a jersey number:')
+        jersey = int(input())
+        print('Enter a new rating for player:')
+        rating = int(input())
+        team_roster[jersey] = rating
+    if option == 'r':
+        print('Enter a rating:')
+        rating = int(input())
+        print('ABOVE',rating)
+        for i in sorted_team_roster:
+            if team_roster[i] > rating:
+                print('Jersey number: ', i, ', Rating: ', team_roster[i], sep='')
+
+    if option == 'o':
+        sorted_team_roster = []
+        for i in team_roster.keys():
+            sorted_team_roster.append(i)
+
+        sorted_team_roster.sort()
+        print('ROSTER')
+        for i in sorted_team_roster:
+            print('Jersey number: ', i, ', Rating: ', team_roster[i], sep='')
+    if option == 'q':
+        break
+
+
+
