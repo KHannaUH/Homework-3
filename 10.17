@@ -1,0 +1,33 @@
+class ItemToPurchase:
+    def __init__(self, item_name='none', item_price=0, item_quantity=0):
+        self.item_name = item_name
+        self.item_price = item_price
+        self.item_quantity = item_quantity
+    def print_item_cost(self):
+        print(self.item_name,' ', self.item_quantity,' @ $', int(self.item_price), ' = $',(self.item_price*self.item_quantity),sep='')
+
+    def price_return(self):
+        return self.item_price*self.item_quantity
+
+if __name__ == '__main__':
+    print('Item 1\nEnter the item name:')
+    name = input()
+    print('Enter the item price:')
+    price = int(input())
+    print('Enter the item quantity:')
+    quantity = int(input())
+    f1 = ItemToPurchase(name,price,quantity)
+    print()
+    print('Item 2\nEnter the item name:')
+    name = input()
+    print('Enter the item price:')
+    price = int(input())
+    print('Enter the item quantity:')
+    quantity = int(input())
+    f2 = ItemToPurchase(name, price, quantity)
+
+    print('\nTOTAL COST')
+    f1.print_item_cost()
+    f2.print_item_cost()
+    print()
+    print('Total: $',(f1.price_return()+f2.price_return()),sep='' )
